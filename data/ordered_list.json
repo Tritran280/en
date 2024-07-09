@@ -1,0 +1,74 @@
+{
+    "OPINION ESSAY": {
+        "id": 1,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    },
+    "ADVANTAGES OR DISADVANTAGES": {
+        "id": 2,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    },
+    "ADVANTAGES AND DISADVANTAGES": {
+        "id": 3,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    },
+    "BALANCED ARGUMENT": {
+        "id": 4,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    },
+    "PROBLEM SOLUTION": {
+        "id": 5,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    },
+    "SPECIAL TYPES": {
+        "id": 6,
+        "thery": {
+            "title": "THEORY",
+            "adress": "https://www.google.com"
+        },
+        "ordered_list": {
+            "1": "one",
+            "2": "two",
+            "3": "three"
+        }
+    }
+}
