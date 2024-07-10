@@ -25,26 +25,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <ol class="tree-structure" id="tree-structure">
-                    <!-- <li>
-                        <span class="num">1</span>
-                        <a href="#">OPINION ESSAY</a>
-                        <ol class="ordered-list">
-                            <li>
-                                <span class="num"><i class="fas fa-exclamation-triangle"></i></span>
-                                <a href="#" class="theory">THEORY</a>
-                            </li>
-                            <li>
-                                <span class="num">1.1</span>
-                                <a href="#">Đề 1</a>
-                            </li>
-                        </ol>
-                    </li> -->
-                </ol>
+                <ol class="tree-structure" id="tree-structure"></ol>
             </div>
         </div>
     </div>
 
+    <div class="search-container">
+        <div class="search-input-container">
+            <input id="search" type="search" placeholder="Start typing to search..." autocomplete="off" class="search-input hidden" oninput="filterSuggestions()"/>
+            <div class="search-icon" onclick="toggleSearch()">
+                &#x1F50D;
+            </div>
+            <!-- Thêm icon clear vào đây -->
+            <div class="clear-icon" style="display: none;" onclick="clearSearch()">
+                &#x2715;
+            </div>
+        </div>
+        <div id="suggestions-list" class="suggestions-list"></div>
+    </div>
+    
+    
     <script src="js/script.js"></script>
 </body>
 </html>

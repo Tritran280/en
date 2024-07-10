@@ -43,9 +43,9 @@ body{
 	max-width: calc(100% - 50px);
 	vertical-align: top;
 }
-.tree-structure li a:hover{
+/* .tree-structure li a:hover{
 	padding-left: 5px;
-}
+} */
 .tree-structure > li > .num{
 	display: inline-block;
 	background: #5879e4;
@@ -86,6 +86,7 @@ body{
 .tree-structure ol li a{
 	color: #000;
 	font-weight: normal;
+	text-align: justify;
 }
 .tree-structure ol li .theory{
 	color: blue;
@@ -122,3 +123,90 @@ body{
 	background-color: #c13afb;
 }
 
+
+/* khung word */
+.search-container {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.search-input-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.search-input {
+	transition: width 0.3s ease, padding 0.3s ease;
+	width: 0;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-radius: 24px;
+	font-size: 16px;
+	outline: none;
+}
+
+.search-input.hidden {
+	width: 0;
+	padding: 0;
+}
+
+.search-input.visible {
+	width: 300px;
+	padding: 8px 16px;
+}
+
+.search-icon {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 24px;
+	transition: background-color 0.3s ease;
+	margin-right: 8px;
+
+}
+
+.search-icon:hover {
+	background-color: #e0e0e0;
+}
+
+.clear-icon {
+	position: absolute;
+	right: 60px; /* Điều chỉnh vị trí của icon xóa */
+	cursor: pointer;
+	color: #666;
+	font-size: 18px;
+}
+
+.clear-icon:hover {
+	color: #000; /* Màu khi di chuột qua */
+}
+
+.suggestions-list {
+	position: absolute;
+	top: 50px;
+	width: 300px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	display: none;
+	z-index: 1000;
+}
+
+.suggestions-list div {
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+.suggestions-list div:hover {
+	background-color: #f0f0f0;
+}
