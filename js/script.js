@@ -18,7 +18,7 @@ class DataTree {
     }
 
     async getlistKeywords() {
-        for (let i = 1; i < 3; i++) {
+        for (let i = 0; i < 3; i++) {
             const response = await fetch(`data/keywords/op_${i}.json`);
             const data = await response.json();
             this.listkeywords = this.listkeywords.concat(data);
@@ -197,5 +197,5 @@ dataTree.getlistKeywords().then(() => {
 function clearSearch() {
     document.getElementById('search').value = '';
     document.getElementById('search').focus();
-    filterSuggestions(); // Gọi lại hàm filterSuggestions để làm mới danh sách gợi ý
+    filterSuggestions();
 }
