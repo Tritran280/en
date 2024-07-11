@@ -94,7 +94,7 @@
 
             async getlistKeywords(i) {
                 try {
-                    const response = await fetch(`/data/keywords/op_${i}.json`);
+                    const response = await fetch(`data/keywords/op_${i}.json`);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
