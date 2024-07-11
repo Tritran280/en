@@ -11,7 +11,7 @@ class DataTree {
     }
 
     async getData() {
-        const response = await fetch('/data/ordered_list.json');
+        const response = await fetch('data/ordered_list.json');
         const data = await response.json();
         this.data = data;
         return data;
@@ -19,7 +19,7 @@ class DataTree {
 
     async getlistKeywords() {
         for (let i = 0; i < 3; i++) {
-            const response = await fetch(`/data/keywords/op_${i}.json`);
+            const response = await fetch(`data/keywords/op_${i}.json`);
             const data = await response.json();
             this.listkeywords = this.listkeywords.concat(data);
         }
