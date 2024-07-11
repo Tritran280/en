@@ -11,7 +11,7 @@ class DataTree {
     }
 
     async getData() {
-        const response = await fetch('data/ordered_list.json');
+        const response = await fetch('/data/ordered_list.json');
         const data = await response.json();
         this.data = data;
         return data;
@@ -19,7 +19,7 @@ class DataTree {
 
     async getlistKeywords() {
         for (let i = 0; i < 3; i++) {
-            const response = await fetch(`data/keywords/op_${i}.json`);
+            const response = await fetch(`/data/keywords/op_${i}.json`);
             const data = await response.json();
             this.listkeywords = this.listkeywords.concat(data);
         }
@@ -72,8 +72,13 @@ dataTree.getData().then(data => {
 
             const spanSub = document.createElement('span');
             spanSub.className = 'num';
-            spanSub.textContent = `${value.id}.${listKey}`;
+            spanSub.textContent = `${listKey}`;
             wrapWordsInSpans(spanSub);
+            // lắng nghe khi click vào spanSub trả về giá trị của spanSub
+            
+            spanSub.addEventListener('click', () => {
+                goToPage(spanSub.textContent);
+            });
 
             const aSub = document.createElement('a');
             aSub.href = '#';
@@ -96,6 +101,14 @@ dataTree.getData().then(data => {
 }).catch(error => {
     console.error('Error fetching data:', error);
 });
+
+// đi đến trang mông muốn
+function goToPage(page) {
+    // lưu giá trị vào local storage
+    localStorage.setItem('cookie', page);
+    // chuyển trang
+    window.location.href = '/template/show.html';
+}
 
 function wrapWordsInSpans(element) {
     const words = element.textContent.split(' ');

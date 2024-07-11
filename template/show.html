@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Display</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <style>
+        /* Custom CSS */
+        * {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: justify;
+        }
+        body {
+            padding-top: 10px;
+            background-color: rgb(183, 219, 250);
+        }
+        .container {
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header, .content, .vocabulary {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: blue;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-size: 20px;
+        }
+        .menu-icon {
+            position: absolute;
+            top: -35px;
+            left: 10px;
+            cursor: pointer;
+            color: rgb(89, 255, 0);
+            font-size: 24px;
+            background-color: rgb(54, 91, 224);
+            padding: 5px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 header">
+                <!-- Icon trở về trang chủ -->
+                <i class="fas fa-arrow-left menu-icon" onclick="window.location.href = '/index.html'"></i>
+                <h2 id="title"></h2>
+            </div>
+            <div class="col-md-12 content">
+                <p id="task"></p>
+            </div>
+
+            <div class="col-md-12 header">
+                <h2>Answer</h2>
+            </div>
+
+            <div class="col-md-12 content" id="answer">
+                <!-- answer will be injected here -->
+            </div>
+
+            <div class="col-md-12 header">
+                <h2>Vocabulary</h2>
+            </div>
+
+            <div class="col-md-12 vocabulary">
+                <ul id="vocabulary-list" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class Data {
+            constructor(title, task, answer, vocabulary) {
+                this.title = title;
+                this.task = task;
+                this.answer = answer;
+                this.vocabulary = vocabulary;
+            }
+
+            async getlistKeywords(i) {
+                try {
+                    const response = await fetch(`/data/keywords/op_${i}.json`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    this.task = data['TASK'];
+                    this.answer = data['ANSWER'];
+                    this.vocabulary = data['VOCABULARY'];
+                } catch (error) {
+                    console.error('Error fetching keywords:', error);
+                }
+            }
+        }
+
+        // Display JSON data
+        $(document).ready(function() {
+            (async () => {
+                const data = new Data();
+                
+                // lấy cookie từ local storage
+                const cookie = parseInt(localStorage.getItem('cookie'));
+
+
+                await data.getlistKeywords(cookie); // Assuming you want to fetch data for OP_1
+                $('#title').text("TASK " + cookie);
+                $('#task').text(data.task);
+
+                const answer = data.answer;
+                $.each(answer, function(key, value) {
+                    if (typeof value === 'object') {
+                        $.each(value, function(subKey, subValue) {
+                            $('#answer').append('<p>' + subValue + '</p>');
+                        });
+                    } else {
+                        $('#answer').append('<p>' + value + '</p>');
+                    }
+                });
+
+                const vocabulary = data.vocabulary;
+                $.each(vocabulary, function(key, value) {
+                    $('#vocabulary-list').append('<li class="list-group-item">' + key + '</li>');
+                });
+                
+            })();
+        });
+    </script>
+</body>
+</html>
