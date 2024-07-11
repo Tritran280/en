@@ -1,112 +1,139 @@
-
 class DataTree {
     constructor() {
-        this.data = [];	// dữ liệu cây
-		
-		this.menuState = 0; // trạng thái của menu 0: đóng, 1: mở
-
+        this.data = [];  // dữ liệu cây
+        this.numTasks = 2; // số lượng tasks
+        this.menuState = 0; // trạng thái của menu 0: đóng, 1: mở
         this.keywords = []; // keywords dùng để tìm kiếm
-
         this.listkeywords = []; // list keywords dùng để tìm kiếm
-    }
-
-    async getData() {
-        const response = await fetch('data/ordered_list.json');
-        const data = await response.json();
-        this.data = data;
-        return data;
+        this.listTasks = []; // list tasks dùng để tìm kiếm {[id, task], [id, task], ...}
     }
 
     async getlistKeywords() {
-        for (let i = 0; i < 3; i++) {
-            const response = await fetch(`data/keywords/op_${i}.json`);
-            const data = await response.json();
-            this.listkeywords = this.listkeywords.concat(data);
+        let listkeywords = [];
+        let listTasks = [];
+        
+        const fetchData = async (i) => {
+            try {
+                const response = await fetch(`data/keywords/op_${i}.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error(`Failed to fetch op_${i}.json: ${error.message}`);
+                return null;
+            }
+        };
+
+        const tasks = [];
+        for (let i = 0; i <= this.numTasks; i++) {
+            tasks.push(fetchData(i));
         }
+
+        const results = await Promise.all(tasks);
+        results.forEach(data => {
+            if (data) {
+                listkeywords = listkeywords.concat(data);
+                listTasks.push([data["GROUP"], data["NAME"], data["TASK"]]);
+            }
+        });
+
+        this.listkeywords = listkeywords; // Save the keywords to the instance
+        this.listTasks = listTasks; // Save the tasks to the instance
+        return { listkeywords, listTasks };
     }
 
-
+    async combinedFunction() {
+        const { listkeywords, listTasks } = await this.getlistKeywords();
+        return { listkeywords, listTasks };
+    }
 }
 
 const dataTree = new DataTree();
 
-dataTree.getData().then(data => {
-    const treeStructure = document.getElementById('tree-structure');
+(async () => {
+    const result = await dataTree.combinedFunction();
+    if (result) {
 
-    Object.entries(data).forEach(([key, value]) => {
-        const li = document.createElement('li');
+        const group = {
+            "1": ["OPINION ESSAY", "https://www.google.com"],
+            "2": ["ADVANTAGES OR DISADVANTAGES", "https://www.google.com"],
+            "3": ["ADVANTAGES AND DISADVANTAGES", "https://www.google.com"],
+            "4": ["BALANCED ARGUMENTS", "https://www.google.com"],
+            "5": ["PROBLEM SOLUTION", "https://www.google.com"],
+            "6": ["SPECIAL TYPES", "https://www.google.com"]
+        }
 
-        const spanNum = document.createElement('span');
-        spanNum.className = 'num';
-        spanNum.textContent = value.id;
-        wrapWordsInSpans(spanNum);
+        let html = '';
 
-        const aMain = document.createElement('a');
-        aMain.href = '#';
-        aMain.textContent = key;
-        aMain.addEventListener('click', (event) => event.preventDefault()); // Prevent default behavior
-        wrapWordsInSpans(aMain);
-
-        const olMain = document.createElement('ol');
-        olMain.className = 'ordered-list';
-
-        const liTheory = document.createElement('li');
-
-        const spanTheory = document.createElement('span');
-        spanTheory.className = 'num';
-        spanTheory.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-
-        const aTheory = document.createElement('a');
-        aTheory.href = value.thery.adress;
-        aTheory.className = 'theory';
-        aTheory.textContent = value.thery.title;
-        wrapWordsInSpans(aTheory);
-
-        liTheory.appendChild(spanTheory);
-        liTheory.appendChild(aTheory);
-
-        olMain.appendChild(liTheory);
-
-        Object.entries(value.ordered_list).forEach(([listKey, listValue]) => {
-            const liSub = document.createElement('li');
-
-            const spanSub = document.createElement('span');
-            spanSub.className = 'num';
-            spanSub.textContent = `${listKey}`;
-            wrapWordsInSpans(spanSub);
-            // lắng nghe khi click vào spanSub trả về giá trị của spanSub
-            
-            spanSub.addEventListener('click', () => {
-                goToPage(spanSub.textContent);
+        Object.entries(group).forEach(([key, value]) => {
+            let orderedListHTML = `
+                <li> 
+                    <span class="num" id="is-none"><i class="fas fa-exclamation-triangle"></i></span>
+                    <a href="${value[1]}" target="_blank" class="theory">THEORY</a>
+                </li>
+            `;
+         
+            result.listTasks.forEach(task => {
+                if (task[0] == key) {
+                    orderedListHTML += `
+                        <li>
+                            <span class="num">${task[1]}</span>
+                            <a href="#">${task[2]}</a>
+                        </li>
+                    `;
+                }
             });
 
-            const aSub = document.createElement('a');
-            aSub.href = '#';
-            aSub.textContent = listValue;
-            aSub.addEventListener('click', (event) => event.preventDefault()); // Prevent default behavior
-            wrapWordsInSpans(aSub);
-
-            liSub.appendChild(spanSub);
-            liSub.appendChild(aSub);
-
-            olMain.appendChild(liSub);
+            html += `
+                <li>
+                    <span class="num" id="is-group">${key}</span>
+                    <a>${value[0]}</a>
+                    <ol class="ordered-list">
+                        ${orderedListHTML}
+                    </ol>
+                </li>
+            `;
         });
 
-        li.appendChild(spanNum);
-        li.appendChild(aMain);
-        li.appendChild(olMain);
+        const treeStructure = document.getElementById('tree-structure');
+        treeStructure.innerHTML = html;
 
-        treeStructure.appendChild(li);
-    });
-}).catch(error => {
-    console.error('Error fetching data:', error);
-});
+        // Attach event listeners after the HTML has been set
+        treeStructure.querySelectorAll('span.num').forEach(span => {
+            span.addEventListener('click', () => {
+                // nếu có id = is-group và is-none thì không chuyển trang
+                if (span.id !== 'is-group' && span.id !== 'is-none') {
+                    goToPage(span.textContent);
+                }
+            });
+        });
+
+        treeStructure.querySelectorAll('a.theory').forEach(a => {
+            a.addEventListener('click', event => {
+                event.preventDefault();
+                window.open(a.href, '_blank');
+            });
+        });
+
+        treeStructure.querySelectorAll('a').forEach(a => {
+            wrapWordsInSpans(a);
+            if (!a.classList.contains('theory')) {
+                a.addEventListener('click', event => {
+                    event.preventDefault();
+                });
+            }
+        });
+
+    } else {
+        console.error('Error fetching data');
+    }
+})();
 
 // đi đến trang mông muốn
 function goToPage(page) {
-    // lưu giá trị vào local storage
     localStorage.setItem('cookie', page);
-    // chuyển trang
     window.location.href = 'show.html';
 }
 
@@ -198,14 +225,11 @@ function filterSuggestions() {
     }
 }
 
-
-
 // tự lấy dữ liệu từ file json
 dataTree.getlistKeywords().then(() => {
-    console.log("dữ liệu đã được lấy từ file json");
+    // console.log("dữ liệu đã được lấy từ file json");
 }
 );
-
 
 function clearSearch() {
     document.getElementById('search').value = '';

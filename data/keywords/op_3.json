@@ -1,13 +1,7 @@
 {
-    "NAME": 1,
-    "GROUP": 1,
+    "NAME": "3",
     "KEYWORDS": {
-        "Some people": "Một số người",
-        "prefer to eat at restaurants": "thích ăn ở nhà hàng",
-        "while others prefer": "trong khi những người khác thích",
-        "to prepare and eat at home": "chuẩn bị và ăn tại nhà",
-        "Which eating option": "Lựa chọn ăn uống nào",
-        "do you prefer?": "bạn thích hơn?"
+        "None": "None"
     },
     "TASK": "Write an essay of about 200 words on the following topic:",
     "ANSWER": {

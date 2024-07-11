@@ -23,7 +23,7 @@ body{
 .tree-structure{
 	list-style: none;
 	clear: both;
-	padding-left: 15px;
+	padding-left: 1px;
 }
 .tree-structure li {
 	position: relative;

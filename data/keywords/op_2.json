@@ -1,15 +1,28 @@
 {
-    "NAME": "OP_2",
+    "NAME": 2,
+    "GROUP": 2,
     "KEYWORDS": {
-        "Computers": "Máy tính",
-        "do not help children": "không giúp trẻ em",
-        "learn more effectively": "học hiệu quả hơn",
-        "The use of computers": "Việc sử dụng máy tính",
-        "has a negative effect": "có ảnh hưởng tiêu cực",
-        "on children’s physical and mental development": "đối với sự phát triển thể chất và tinh thần của trẻ em",
-        "Some of them": "Một số trong số họ",
-        "even suffer from autism": "thậm chí còn bị tự kỷ",
-        "To what extent": "Ở mức độ nào",
-        "do you agree or disagree?": "bạn đồng ý hay không đồng ý?"
+        "Some people": "Một số người",
+        "prefer to eat at restaurants": "thích ăn ở nhà hàng",
+        "while others prefer": "trong khi những người khác thích",
+        "to prepare and eat at home": "chuẩn bị và ăn tại nhà",
+        "Which eating option": "Lựa chọn ăn uống nào",
+        "do you prefer?": "bạn thích hơn?"
+    },
+    "TASK": "Write an essay of about 200 words on the following topic:",
+    "ANSWER": {
+        "INTRODUCTION": "In this day and age, the appearance of social media has affected many aspects of our lives. In this essay, this disscusion will be clarified by comparing the opinions of other people.",
+        "BODY": {
+            "OPINION_1": "Some people prefer to eat at restaurants because they find it convenient and time-saving.",
+            "OPINION_2": "On the other hand, others prefer to prepare and eat at home because they can control the ingredients and the cooking process."
+        },
+        "CONCLUSION": "In conclusion, both eating options have their own advantages and disadvantages. People should choose the option that best suits their lifestyle and preferences."
+    },
+    "VOCABULARY": {
+        "CONVENIENT": "tiện lợi",
+        "TIME-SAVING": "tiết kiệm thời gian",
+        "VARIETY": "đa dạng",
+        "DISHES": "món ăn"
     }
+
 }
