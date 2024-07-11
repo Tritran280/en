@@ -107,7 +107,7 @@ function goToPage(page) {
     // lưu giá trị vào local storage
     localStorage.setItem('cookie', page);
     // chuyển trang
-    window.location.href = '/template/show.html';
+    window.location.href = 'template/show.html';
 }
 
 function wrapWordsInSpans(element) {
