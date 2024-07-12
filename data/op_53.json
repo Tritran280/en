@@ -2,9 +2,24 @@
     "NAME": 53,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "experiencing": "đang trải qua",
+        "dramatic increase": "tăng đột ngột",
+        "population": "dân số",
+        "causing problems": "gây ra vấn đề",
+        "not only": "không chỉ",
+        "poor": "nghèo",
+        "undeveloped": "chưa phát triển",
+        "undeveloped countries": "các nước chưa phát triển",
+        "industrialized": "công nghiệp hóa",
+        "developing nations": "các quốc gia đang phát triển",
+        "Describe": "Mô tả",
+        "some of the problems": "một số vấn đề",
+        "overpopulation": "dân số quá đông",
+        "suggest": "đề xuất",
+        "at least one possible solution": "ít nhất một giải pháp có thể",
+        "least": "ít nhất"
     },
-    "TASK": "None",
+    "TASK": "The world is experiencing a dramatic increase in population. This is causing problems not only for the poor in undeveloped countries but also for industrialized and developing nations. Describe some of the problems that overpopulation causes, and suggest at least one possible solution.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

@@ -2,9 +2,19 @@
     "NAME": 52,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "Obesity": "Béo phì",
+        "has become": "đã trở thành",
+        "one of the main public health problems": "một trong những vấn đề sức khỏe công cộng chính",
+        "worldwide": "trên toàn thế giới",
+        "childhood": "trẻ em",
+        "obesity rate": "tỷ lệ béo phì",
+        "growing very fast": "đang tăng rất nhanh",
+        "worried": "lo lắng",
+        "an educated" : "một người có học thức",
+        "reader": "độc giả"
+
     },
-    "TASK": "None",
+    "TASK": "Obesity has become one of the main public health problems worldwide. The childhood obesity rate is growing very fast in both developed and developing countries. Both parents and schools are worried about this problem. There are many reasons why children are obese. Write an essay to an educated reader to discuss the reasons (causes) and solutions for children’s obesity.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

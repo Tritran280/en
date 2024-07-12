@@ -65,7 +65,7 @@ const dataTree = new DataTree();
             "6": ["SPECIAL TYPES", "https://www.google.com"]
         }
 
-        let html = '';
+        var html = '';
 
         Object.entries(group).forEach(([key, value]) => {
             let orderedListHTML = `

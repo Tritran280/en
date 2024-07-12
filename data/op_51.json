@@ -2,9 +2,18 @@
     "NAME": 51,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "Brain drain": "Chảy máu chất xám",
+        "defined as": "được xác định là",
+        "migration": "di cư",
+        "highly educated people": "những người có trình độ học vấn cao",
+        "in search of": "trong tìm kiếm của",
+        "a better standard of living": "một tiêu chuẩn sống tốt hơn",
+        "quality of life": "chất lượng cuộc sống",
+        "higher salaries": "mức lương cao hơn",
+        "serious": "nghiêm trọng",
+        "how to tackle this issue?": "làm thế nào để giải quyết vấn đề này?"
     },
-    "TASK": "None",
+    "TASK": "Brain drain is defined as the migration of highly educated people in search of a better standard of living, quality of life, and higher salaries. Brain drain is a serious problem in some developing countries. What are the causes and how to tackle this issue? ",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

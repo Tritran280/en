@@ -2,9 +2,18 @@
     "NAME": 54,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "Instead of": "Thay vì",
+        "educational programs": "chương trình giáo dục",
+        "news": "tin tức",
+        "prefer": "thích",
+        "comics": "truyện tranh",
+        "comedies": "phim hài",
+        "relaxation": "thư giãn",
+        "give some solutions": "đưa ra một số giải pháp",
+        "relevant examples": "ví dụ liên quan",
+        "according to": "theo"
     },
-    "TASK": "None",
+    "TASK": "Instead of watching educational programs or news, children prefer to read comics or watch game shows, movies, and comedies for entertainment and relaxation. What are the negative effects and causes of this problem? Give some solutions and relevant examples according to your knowledge.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

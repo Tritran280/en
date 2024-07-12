@@ -2,9 +2,22 @@
     "NAME": 55,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "Devices": "Thiết bị",
+        "electrical appliances": "thiết bị điện",
+        "safe to use": "an toàn khi sử dụng",
+        "discarded": "bị loại bỏ",
+        "electronic waste": "rác điện tử",
+        "affect": "ảnh hưởng",
+        "human health": "sức khỏe con người",
+        "one of the main": "một trong những",
+        "components": "thành phần",
+        "plastic": "nhựa",
+        "release": "phát ra",
+        "toxic chemicals": "chất độc hại",
+        "cause": "gây ra",
+        "cancer": "ung thư"
     },
-    "TASK": "None",
+    "TASK": "Devices like televisions, smartphones, and electrical appliances will be safe to use. However, when these devices are discarded, they become electronic waste that can affect human health and the environment. One of the main components of electronic waste is plastic, which can release toxic chemicals and cause cancer. Write an essay to discuss the causes and solutions of electronic waste.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

@@ -2,9 +2,13 @@
     "NAME": 50,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "These days": "Những ngày này",
+        "traffic accidents": "tai nạn giao thông",
+        "more and more serious": "ngày càng nghiêm trọng",
+        "the causes": "nguyên nhân",
+        "how could this problem be solved?": "làm thế nào để giải quyết vấn đề này?"
     },
-    "TASK": "None",
+    "TASK": "These days, traffic accidents are more and more serious. What are the causes and how could this problem be solved?",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {
