@@ -1,0 +1,20 @@
+{
+    "NAME": 47,
+    "GROUP": 4,
+    "KEYWORDS": {
+        "None": "None"
+    },
+    "TASK": "None",
+    "ANSWER": {
+        "INTRODUCTION": "None",
+        "BODY": {
+            "OPINION_1": "None",
+            "OPINION_2": "None"
+        },
+        "CONCLUSION": "None"
+    },
+    "VOCABULARY": {
+        "one": "một",
+        "two": "hai"
+    }
+}

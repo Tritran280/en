@@ -1,7 +1,7 @@
 class DataTree {
     constructor() {
         this.data = [];  // dữ liệu cây
-        this.numTasks = 2; // số lượng tasks
+        this.numTasks = 61; // số lượng tasks
         this.menuState = 0; // trạng thái của menu 0: đóng, 1: mở
         this.keywords = []; // keywords dùng để tìm kiếm
         this.listkeywords = []; // list keywords dùng để tìm kiếm
@@ -14,7 +14,7 @@ class DataTree {
         
         const fetchData = async (i) => {
             try {
-                const response = await fetch(`data/keywords/op_${i}.json`);
+                const response = await fetch(`data/op_${i}.json`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
