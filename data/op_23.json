@@ -2,19 +2,50 @@
     "NAME": 23,
     "GROUP": 2,
     "KEYWORDS": {
-        "None": "None"
+        "technology": "công nghệ",
+        "continuously developing": "liên tục phát triển",
+        "which makes young people": "điều này làm cho giới trẻ",
+        "spend a lot of time": "dành rất nhiều thời gian",
+        "spend": "dành",
+        "watching movies": "xem phim",
+        "playing games": "chơi game",
+        "Many people believe that": "Nhiều người tin rằng",
+        "libraries": "thư viện",
+        "should do something": "nên làm gì đó",
+        "encourage": "khuyến khích",
+        "come here": "đến đây",
+        "read books": "đọc sách",
+        "youth-friendly library designs": "thiết kế thư viện thân thiện với thanh thiếu niên",
+        "storytelling events": "sự kiện kể chuyện",
+        "book parties": "tiệc sách",
+        "the benefits of": "các lợi ích của",
+        "advise": "khuyên",
+        "reading habits": "thói quen đọc sách"
     },
-    "TASK": "None",
+    "TASK": "Today, technology is continuously developing, which makes young people spend a lot of time watching movies and playing games. Many people believe that libraries should do something to encourage people to come here and read books such as youth-friendly library designs, storytelling events, or book parties. Discuss the benefits of reading and advise people to have reading habits.",
     "ANSWER": {
-        "INTRODUCTION": "None",
+        "INTRODUCTION": "In this day and age, the appearance of social problems will effect directly our life and many aspects such as education, working, entertainment, the environment, finance, and health. The topic is that libraries should do something to encourage people to come here and read books such as youth-friendly library design, storytelling events, or book parties. I agree with the advantages and the discussion surrounding this problem will be clarified in this essay.",
         "BODY": {
-            "OPINION_1": "None",
-            "OPINION_2": "None"
+            "OPINION_1": "There are several convincing reasons for the benefits of reading books. Beginning with education, the young can improve communication skills and vocabulary when they read books from different genres. These things help them adjust the mindset and develop the ability to think critically. Besides, reading books can help people to improve memories and focus, it will support them to learn better at school. Therefore, the majority advise and encourage people should have reading habits to help for their study.",
+            "OPINION_2": "Secondly about entertainment, the young can relax and reduce stress when they read books. They can adjust the frame of mind and feel comfortable when reading the books about love, friendship, or life. Moreover, they can share the feelings and discuss the content of books, it will help them to improve the relationship. Besides, people can develop imagination and creativity when they read books. Thus, labruaries should organize storytelling events or book parties to encourage people to come here and read books."
         },
-        "CONCLUSION": "None"
+        "CONCLUSION": "Overall, every single situation will consist of both advantages and disadvantages. From my point of view, we need to develop the pros and limit the cons of the problem."
     },
     "VOCABULARY": {
-        "one": "một",
-        "two": "hai"
+        "improve communication skills": "cải thiện kỹ năng giao tiếp",
+        "different genres": "các thể loại khác nhau",
+        "adjust the mindset": "điều chỉnh tư duy",
+        "develop the ability to think critically": "phát triển khả năng tư duy phê phán",
+        "improve memories": "cải thiện trí nhớ",
+        "focus": "tập trung",
+        "adjust the frame of mind": "điều chỉnh tâm trạng",
+        "feel comfortable": "cảm thấy thoải mái",
+        "share the feelings": "chia sẻ cảm xúc",
+        "discuss the content of books": "thảo luận nội dung sách",
+        "improve the relationship": "cải thiện mối quan hệ",
+        "develop imagination": "phát triển trí tưởng tượng",
+        "creativity": "sáng tạo",
+        "pros": "lợi ích",
+        "cons": "bất lợi"
     }
 }
