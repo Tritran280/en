@@ -1,7 +1,7 @@
 class DataTree {
     constructor() {
         this.data = [];  // dữ liệu cây
-        this.numTasks = 61; // số lượng tasks
+        this.numTasks = 62; // số lượng tasks
         this.menuState = 0; // trạng thái của menu 0: đóng, 1: mở
         this.keywords = []; // keywords dùng để tìm kiếm
         this.listkeywords = []; // list keywords dùng để tìm kiếm
@@ -134,7 +134,11 @@ const dataTree = new DataTree();
 // đi đến trang mông muốn
 function goToPage(page) {
     localStorage.setItem('cookie', page);
+    if (62 == page) {
+        window.location.href = 'word.html';
+    } else {
     window.location.href = 'show.html';
+    }
 }
 
 function wrapWordsInSpans(element) {

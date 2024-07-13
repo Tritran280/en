@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Learning App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        #correct-answer {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="word-container" class="text-center mt-5">
+            <h2 id="vietnamese-word">Loading...</h2>
+            <input type="text" id="english-input" class="form-control mt-3" placeholder="Enter English word">
+            <button class="btn btn-primary mt-3" onclick="checkAnswer()">Check</button>
+            <div id="result" class="result"></div>
+            <div id="correct-answer" class="text-danger mt-3"></div>
+            <button id="continue-button" class="btn btn-secondary mt-3" onclick="continueGame()" style="display:none;">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        let data = [];
+        let wrongWords = [];
+        let currentWordIndex = 0;
+
+        function loadJSON(callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.overrideMimeType("application/json");
+            xhr.open('GET', 'data/word.json', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == "200") {
+                    callback(JSON.parse(xhr.responseText));
+                }
+            };
+            xhr.send(null);
+        }
+
+        function loadWord() {
+            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : data[currentWordIndex];
+            document.getElementById('vietnamese-word').innerText = wordToShow.vietnamese;
+            document.getElementById('english-input').value = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('correct-answer').innerText = '';
+            document.getElementById('continue-button').style.display = 'none';
+            document.getElementById('english-input').style.display = 'block';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('english-input').value.trim().toLowerCase();
+            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : data[currentWordIndex];
+            const correctAnswer = wordToShow.english.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('result').innerText = 'Correct!';
+                document.getElementById('result').classList.add('text-success');
+                document.getElementById('result').classList.remove('text-danger');
+
+                if (wrongWords.length > 0) {
+                    wrongWords.splice(currentWordIndex, 1);
+                }
+
+                currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : data.length);
+                setTimeout(loadWord, 1000); // Load next word after 1 second
+            } else {
+                document.getElementById('result').innerText = 'Incorrect!';
+                document.getElementById('result').classList.add('text-danger');
+                document.getElementById('result').classList.remove('text-success');
+                document.getElementById('correct-answer').innerText = `The correct answer is:\n${correctAnswer}`;
+
+                if (wrongWords.length === 0) {
+                    wrongWords.push(wordToShow);
+                } else if (!wrongWords.includes(wordToShow)) {
+                    wrongWords.push(wordToShow);
+                }
+
+                document.getElementById('english-input').style.display = 'none';
+                document.getElementById('continue-button').style.display = 'block';
+            }
+        }
+
+        function continueGame() {
+            currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : data.length);
+            loadWord();
+        }
+
+        window.onload = function() {
+            loadJSON(function(response) {
+                data = response;
+                loadWord();
+            });
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
