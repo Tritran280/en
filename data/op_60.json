@@ -2,9 +2,18 @@
     "NAME": 60,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "witnessing": "chứng kiến",
+        "alarming rate": "tốc độ đáng báo động",
+        "biodiversity loss": "mất đa dạng sinh học",
+        "countless": "vô số",
+        "species": "loài",
+        "disappearing": "biến mất",
+        "unprecedented pace": "tốc độ chưa từng có",
+        "pace": "tốc độ",
+        "leading to": "dẫn đến",
+        "maintain": "duy trì"
     },
-    "TASK": "None",
+    "TASK": "The world is witnessing an alarming rate of biodiversity loss, with countless species disappearing at an unprecedented pace. Discuss the main causes leading to this problem and propose some solutions to maintain biodiversity.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

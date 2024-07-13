@@ -2,9 +2,14 @@
     "NAME": 57,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "air pollution": "ô nhiễm không khí",
+        "becoming": "trở nên",
+        "modern life": "cuộc sống hiện đại",
+        "public transportation": "phương tiện giao thông công cộng",
+        "negative impacts": "tác động tiêu cực",
+        "suggest some solutions": "đề xuất một số giải pháp"
     },
-    "TASK": "None",
+    "TASK": "Air pollution affects humans, plants, and animals. It is becoming a serious problem in modern life. Many people believe that public transportation should be encouraged to reduce negative impacts. Discuss the effects of air pollution on health and suggest some solutions to this problem.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

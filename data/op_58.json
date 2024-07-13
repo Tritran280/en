@@ -2,9 +2,12 @@
     "NAME": 58,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "marriage": "hôn nhân",
+        "decide": "quyết định",
+        "society": "xã hội",
+        "family life": "cuộc sống gia đình"
     },
-    "TASK": "None",
+    "TASK": "Nowadays, more and more people get married after the age of 35. The data shows that the number is increasing and many people decide to have children after the age of 35. What are the effects of this trend on society and family life? Discuss some reasons and possible solutions.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

@@ -2,9 +2,18 @@
     "NAME": 61,
     "GROUP": 6,
     "KEYWORDS": {
-        "None": "None"
+        "marathon runners": "vận động viên marathon",
+        "gymnasts": "vận động viên nhào lộn",
+        "elite athletes": "vận động viên xuất sắc",
+        "elite": "xuất sắc",
+        "athletes": "vận động viên",
+        "competition": "cuộc thi",
+        "significantly": "đáng kể",
+        "key differences": "sự khác biệt chính",
+        "physical demands": "yêu cầu về thể chất",
+        "between": "giữa"
     },
-    "TASK": "None",
+    "TASK": "Marathon runners and gymnasts are both elite athletes, but their training and competition environments differ significantly. Discuss the key differences in environment, culture, and physical demands between marathon runners and gymnasts.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

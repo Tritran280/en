@@ -2,9 +2,23 @@
     "NAME": 59,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "recent": "gần đây",
+        "US report": "báo cáo của Mỹ",
+        "face": "đối mặt",
+        "water scarcity": "khan hiếm nước",
+        "expected": "dự kiến",
+        "rise": "tăng lên",
+        "in addition": "ngoài ra",
+        "waste disposal facilities": "cơ sở xử lý chất thải",
+        "waste": "chất thải",
+        "disposal": "xử lý",
+        "facilities": "cơ sở",
+        "estimated": "ước lượng",
+        "each year": "mỗi năm",
+        "unclean water": "nước bẩn",
+        "address": "giải quyết"
     },
-    "TASK": "None",
+    "TASK": "According to a recent US report, 2.7 million people face water scarcity, and this number is expected to continue to rise by 2025. In addition, there are places where there are no toilets and no waste disposal facilities. An estimated 1.5 million people die each year from unclean water. Discuss the causes of this problem and propose solutions to address it.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

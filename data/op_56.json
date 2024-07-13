@@ -2,9 +2,10 @@
     "NAME": 56,
     "GROUP": 5,
     "KEYWORDS": {
-        "None": "None"
+        "deforestation": "sự phá rừng",
+        "serious": "nghiêm trọng"
     },
-    "TASK": "None",
+    "TASK": "These days, deforestation is more and more serious. What are the causes and how could this problem be solved?",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {
