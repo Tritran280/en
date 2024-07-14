@@ -2,9 +2,10 @@
     "NAME": 47,
     "GROUP": 4,
     "KEYWORDS": {
-        "None": "None"
+        "gain": "đạt được",
+        "instead of": "thay vì"
     },
-    "TASK": "None",
+    "TASK": "Many people think that children can gain many benefits from choosing books with pictures to read while others say that books with pictures are like watching TV so they encourage children to watch TV instead of reading books. Discuss both views and give your own opinion.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

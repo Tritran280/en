@@ -2,9 +2,16 @@
     "NAME": 46,
     "GROUP": 4,
     "KEYWORDS": {
-        "None": "None"
+        "Throughout history": "trong suốt lịch sử",
+        "arranged": "sắp xếp",
+        "arranged marriages": "hôn nhân sắp đặt",
+        "have been the norm": "đã trở thành quy tắc",
+        "recent": "gần đây",
+        "become": "trở thành",
+        "increasingly": "ngày càng",
+        "popular": "phổ biến"
     },
-    "TASK": "None",
+    "TASK": "Throughout history, arranged marriages have been the norm in many cultures. In recent times, however, love marriages have become increasingly popular. Discuss both views and give your own opinion.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {

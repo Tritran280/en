@@ -2,9 +2,10 @@
     "NAME": 48,
     "GROUP": 4,
     "KEYWORDS": {
-        "None": "None"
+        "Art": "Nghệ thuật",
+        "waste of time": "lãng phí thời gian"
     },
-    "TASK": "None",
+    "TASK": "Some people think that art is an essential subject for students at school while others say that it is a waste of time and they should learn math and other languages instead. Discuss both views and give your own opinion.",
     "ANSWER": {
         "INTRODUCTION": "None",
         "BODY": {
