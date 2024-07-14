@@ -11,17 +11,21 @@
         }
         .result {
             margin-top: 20px;
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
         #correct-answer {
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div id="word-container" class="text-center mt-5">
+        <div id="topics-container" class="mt-5">
+            <h3>Select Topics:</h3>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="startGame()">Start</button>
+        <div id="word-container" class="text-center mt-5" style="display:none;">
             <h2 id="vietnamese-word">Loading...</h2>
             <input type="text" id="english-input" class="form-control mt-3" placeholder="Enter English word">
             <button class="btn btn-primary mt-3" onclick="checkAnswer()">Check</button>
@@ -33,6 +37,7 @@
 
     <script>
         let data = [];
+        let words = [];
         let wrongWords = [];
         let currentWordIndex = 0;
 
@@ -48,8 +53,18 @@
             xhr.send(null);
         }
 
+        function extractWords(selectedTopics) {
+            let allWords = [];
+            data.forEach(topic => {
+                if (selectedTopics.includes(topic.TOPIC)) {
+                    allWords = allWords.concat(topic.WORD);
+                }
+            });
+            return allWords;
+        }
+
         function loadWord() {
-            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : data[currentWordIndex];
+            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : words[currentWordIndex];
             document.getElementById('vietnamese-word').innerText = wordToShow.vietnamese;
             document.getElementById('english-input').value = '';
             document.getElementById('result').innerText = '';
@@ -60,7 +75,7 @@
 
         function checkAnswer() {
             const userAnswer = document.getElementById('english-input').value.trim().toLowerCase();
-            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : data[currentWordIndex];
+            const wordToShow = wrongWords.length > 0 ? wrongWords[currentWordIndex] : words[currentWordIndex];
             const correctAnswer = wordToShow.english.toLowerCase();
 
             if (userAnswer === correctAnswer) {
@@ -72,13 +87,13 @@
                     wrongWords.splice(currentWordIndex, 1);
                 }
 
-                currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : data.length);
+                currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : words.length);
                 setTimeout(loadWord, 1000); // Load next word after 1 second
             } else {
                 document.getElementById('result').innerText = 'Incorrect!';
                 document.getElementById('result').classList.add('text-danger');
                 document.getElementById('result').classList.remove('text-success');
-                document.getElementById('correct-answer').innerText = `The correct answer is:\n${correctAnswer}`;
+                document.getElementById('correct-answer').innerText = `The correct answer is:\n${correctAnswer}.`;
 
                 if (wrongWords.length === 0) {
                     wrongWords.push(wordToShow);
@@ -92,14 +107,46 @@
         }
 
         function continueGame() {
-            currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : data.length);
+            currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : words.length);
             loadWord();
+        }
+
+        function startGame() {
+            const selectedTopics = Array.from(document.querySelectorAll('input[name="topics"]:checked')).map(checkbox => checkbox.value);
+            words = extractWords(selectedTopics);
+            if (words.length > 0) {
+                document.getElementById('topics-container').style.display = 'none';
+                document.querySelector('button[onclick="startGame()"]').style.display = 'none';
+                document.getElementById('word-container').style.display = 'block';
+                loadWord();
+            } else {
+                alert('Please select at least one topic.');
+            }
+        }
+
+        function createTopicCheckboxes() {
+            const topicsContainer = document.getElementById('topics-container');
+            data.forEach(topic => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'topics';
+                checkbox.value = topic.TOPIC;
+                checkbox.id = topic.TOPIC;
+
+                const label = document.createElement('label');
+                label.htmlFor = topic.TOPIC;
+                label.innerText = topic.TOPIC;
+
+                topicsContainer.appendChild(checkbox);
+                topicsContainer.appendChild(label);
+                topicsContainer.appendChild(document.createElement('br'));
+            });
         }
 
         window.onload = function() {
             loadJSON(function(response) {
                 data = response;
-                loadWord();
+                createTopicCheckboxes();
             });
         }
     </script>

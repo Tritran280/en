@@ -1,13 +1,58 @@
+
 [
-    {"english": "social skills", "vietnamese": "kỹ năng xã hội"},
-    {"english": "a career path", "vietnamese": "một con đường sự nghiệp"},
-    {"english": "working methods", "vietnamese": "phương pháp làm việc"},
-    {"english": "prospects", "vietnamese": "triển vọng"},
-    {"english": "the quality of life", "vietnamese": "chất lượng cuộc sống"},
-    {"english": "success", "vietnamese": "thành công"},
-    {"english": "the needs", "vietnamese": "nhu cầu"},
-    {"english": "the work duration", "vietnamese": "thời gian làm việc"},
-    {"english": "hardships", "vietnamese": "những khó khăn"},
-    {"english": "job promotions", "vietnamese": "sự thăng tiến trong công việc"},
-    {"english": "many fields", "vietnamese": "nhiều lĩnh vực"}
+    {
+        "TOPIC": "WORKING",
+        "ID": 1,
+        "WORD": [
+            {"english": "social skills", "vietnamese": "kỹ năng xã hội"},
+            {"english": "a career path", "vietnamese": "một con đường sự nghiệp"},
+            {"english": "working methods", "vietnamese": "phương pháp làm việc"},
+            {"english": "prospects", "vietnamese": "triển vọng"},
+            {"english": "the quality of life", "vietnamese": "chất lượng cuộc sống"},
+            {"english": "success", "vietnamese": "thành công"},
+            {"english": "the needs", "vietnamese": "nhu cầu"},
+            {"english": "the work duration", "vietnamese": "thời gian làm việc"},
+            {"english": "hardships", "vietnamese": "những khó khăn"},
+            {"english": "job promotions", "vietnamese": "sự thăng tiến trong công việc"},
+            {"english": "many fields", "vietnamese": "nhiều lĩnh vực"}
+        ]
+    },
+    {
+        "TOPIC": "EDUCATION",
+        "ID": 2,
+        "WORD": [
+            {"english": "communication skills", "vietnamese": "kỹ năng giao tiếp"},
+            {"english": "many things around", "vietnamese": "nhiều thứ xung quanh"},
+            {"english": "the mindset", "vietnamese": "tư duy"},
+            {"english": "the insight", "vietnamese": "hiểu biết"},
+            {"english": "memories", "vietnamese": "kỷ niệm"},
+            {"english": "studying abroad", "vietnamese": "học ở nước ngoài"},
+            {"english": "many languages", "vietnamese": "nhiều ngôn ngữ"},
+            {"english": "laziness", "vietnamese": "lười biếng"},
+            {"english": "playing time", "vietnamese": "thời gian chơi"},
+            {"english": "academic burden", "vietnamese": "áp lực học tập"},
+            {"english": "future goals", "vietnamese": "mục tiêu tương lai"},
+            {"english": "valuable inputs", "vietnamese": "thông tin có giá trị"},
+            {"english": "self-study ability", "vietnamese": "khả năng tự học"}
+            
+        ]
+    },
+    {
+        "TOPIC": "ENTERTAINMENT",
+        "ID": 3,
+        "WORD": [
+            {"english": "confidence", "vietnamese": "sự tự tin"},
+            {"english": "historic monuments", "vietnamese": "di tích lịch sử"},
+            {"english": "the frame of mind", "vietnamese": "tâm trạng"},
+            {"english": "personal relationships", "vietnamese": "mối quan hệ cá nhân"},
+            {"english": "the positive mode", "vietnamese": "trạng thái tích cực"},
+            {"english": "a lot of emotions", "vietnamese": "nhiều cảm xúc"},
+            {"english": "the benefits of", "vietnamese": "lợi ích của"},
+            {"english": "online time", "vietnamese": "thời gian trực tuyến"},
+            {"english": "tension", "vietnamese": "căng thẳng"},
+            {"english": "social networks", "vietnamese": "mạng xã hội"},
+            {"english": "different cultures and traditions", "vietnamese": "văn hóa và truyền thống khác nhau"},
+            {"english": "the creative capacity", "vietnamese": "khả năng sáng tạo"}
+        ]
+    }
 ]
