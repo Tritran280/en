@@ -107,7 +107,7 @@
         }
 
         function continueGame() {
-            currentWordIndex = (currentWordIndex + 1) % (wrongWords.length > 0 ? wrongWords.length : words.length);
+            currentWordIndex = currentWordIndex-1;
             loadWord();
         }
 
