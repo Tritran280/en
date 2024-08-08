@@ -99,5 +99,31 @@
             {"english": "negatively impacts", "vietnamese": "ảnh hưởng tiêu cực"},
             {"english": "public safety", "vietnamese": "an toàn cộng đồng"}
         ]
+    },
+    {
+        "TOPIC": "VERBS",
+        "ID": 6,
+        "WORD": [
+            {"english": "develop", "vietnamese": "phát triển"},
+            {"english": "improve", "vietnamese": "cải thiện"},
+            {"english": "explore", "vietnamese": "khám phá"},
+            {"english": "ajust", "vietnamese": "điều chỉnh"},
+            {"english": "change", "vietnamese": "thay đổi"},
+            {"english": "widen", "vietnamese": "mở rộng"},
+            {"english": "increase", "vietnamese": "tăng"},
+            {"english": "protect", "vietnamese": "bảo vệ"},
+            {"english": "save", "vietnamese": "lưu giữ"},
+            {"english": "experience", "vietnamese": "trải nghiệm"},
+            {"english": "approach", "vietnamese": "tiếp cận"},
+            {"english": "understand", "vietnamese": "hiểu"},
+            {"english": "know", "vietnamese": "biết"},
+            {"english": "limit", "vietnamese": "hạn chế"},
+            {"english": "reduce", "vietnamese": "giảm"},
+            {"english": "decrease", "vietnamese": "giảm"},
+            {"english": "connect", "vietnamese": "kết nối"},
+            {"english": "advance", "vietnamese": "nâng cao"},
+            {"english": "enhance", "vietnamese": "nâng cao"},
+            {"english": "challenge", "vietnamese": "thách thức"}
+        ]
     }
 ]
